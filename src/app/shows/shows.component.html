@@ -1,0 +1,38 @@
+ 
+ <div style="margin-left:200px">
+<h1>Here is Shows detail</h1>
+</div>
+<div  style="height:400px ;width:900px; margin-left: 200px; overflow-y: auto">
+<table class="table table-bordered">
+       
+        <thead>
+           
+            <tr class="bg-primary">
+                
+                <td class="col-md-2">
+                    Show Title
+                </td>
+                
+                <td class="col-md-6">
+                    Images
+                </td>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+            <tr *ngFor="let detail of PersonalDetail">
+                <td class="col-md-2">
+                   <a routerLink="/showDetail/{{detail.show.name}}" >{{detail.show.name}} </a> 
+                </td>
+               
+                <td class="col-md-6">
+                     
+                       <img [src]="detail.show.image.medium" alt="moviesImage"  style="width:100px;height:100px" >
+                </td>
+            </tr>
+        
+
+    </tbody>
+
+</table>
+</div>

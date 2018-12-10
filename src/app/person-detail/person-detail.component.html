@@ -1,0 +1,251 @@
+ 
+          <div  style="height:240px ">
+               <div class="container">
+               
+               <!-- Portfolio Item Heading -->
+               
+               
+               <!-- Portfolio Item Row -->
+               <div style="height:300px">
+               <div class="row">
+               
+                 <div class="col-md-3">
+                   <img class="img-fluid" [src]="peopleSearch.image.medium" style="width:280px;height:200px;"  alt="">
+                 </div>
+               
+                 <div class="col-md-9">
+      
+                   <div class="row">
+                     <div class="col-md-3">
+                        <h4  >{{peopleSearch.name}}
+                            <!-- <small>Secondary Text</small> -->
+                          </h4>
+                     </div>
+                     <div class="col-md-3">
+                   <h6 >Country</h6>
+                   <p>   {{peopleSearch.country.name}}</p>
+                    
+                   </div>
+                   <div class="col-md-3">
+                   <h6  >Gender</h6>
+                   {{peopleSearch.gender}}
+                    
+                    </div>
+                    <div class="col-md-3">
+                        <h6  >Birthday</h6>
+                        {{peopleSearch.birthday}}
+                         
+                         </div>
+                    </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+            </div>
+      
+         
+
+
+
+
+
+
+
+
+             
+
+                  <div class="row" >
+
+           <div class="col-md-6">
+             <div style="margin-left:50px">
+           <h5>Here is top 5 Shows Cast</h5>
+          </div>
+<div  style="height:200px ;width:600px; margin-left: 30px; overflow-y: auto;">
+<table class="table table-bordered">
+       
+        <thead>
+           
+            <tr class="bg-primary">
+                
+                  
+                      <td class="col-md-2">
+                         Name
+                      </td>
+                           <td class="col-md-2">
+                                Genres
+                             </td>
+                             <td class="col-md-2">
+                                 Language
+                               </td>
+                                
+                                 
+                                     <td class="col-md-2">
+                                       Premiered
+                                       </td>
+                                       <td class="col-md-2">
+                                         Average
+                                         </td>
+                                         <td class="col-md-2">
+                                         Days
+                                           </td>
+                                           <td class="col-md-2">
+                                             Status
+                                             </td>
+                                              
+                                               <td class="col-md-2">
+                                             Type
+                                                 </td>
+                                                 <td class="col-md-2">
+                                                   weight
+                                                   </td>
+                 
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+            <tr *ngFor="let app of appearanceInShow">
+                  <td class="col-md-2">
+                        {{app._embedded.show.name}}
+                       </td>
+                  <td class="col-md-2">
+                        {{app._embedded.show.genres}}
+                       </td>
+                      
+                         
+                           <td class="col-md-2">
+                              {{app._embedded.show.language}}
+                             </td>
+                             
+                              
+                                     <td class="col-md-2">
+                                        {{app._embedded.show.premiered}}
+                                       </td>
+                                       <td class="col-md-2">
+                                          {{app._embedded.show.rating.average}}
+                                         </td>
+                                         <td class="col-md-2">
+                                            {{app._embedded.show.schedule.days}}
+                                           </td>
+                                           <td class="col-md-2">
+                                              {{app._embedded.show.status}}
+                                             </td>
+                                            
+                                               <td class="col-md-2">
+                                                  {{app._embedded.show.type}}
+                                                 </td>
+                                                 <td class="col-md-2">
+                                                    {{app._embedded.show.weight}}
+                                                   </td>
+               
+                  
+            </tr>
+            <tr><td *ngIf="!appearanceInShow ||  appearanceInShow.length==0" colspan="9">
+                  No record Found
+  
+                </td></tr>
+
+    </tbody>
+
+</table>
+</div>
+ 
+</div>
+ 
+      <div class="col-md-6">
+            <div style="margin-left:50px">
+                  <h5>Here is top 5 Shows Crew</h5>
+                 </div>
+       <div  style="height:200px ;width:600px; margin-left: 30px; overflow-y: auto;">
+       <table class="table table-bordered">
+ 
+            <thead>
+           
+                  <tr class="bg-primary">
+                      
+                        
+                            <td class="col-md-2">
+                               Name
+                            </td>
+                                 <td class="col-md-2">
+                                      Genres
+                                   </td>
+                                   <td class="col-md-2">
+                                       Language
+                                     </td>
+                                      
+                                       
+                                           <td class="col-md-2">
+                                             Premiered
+                                             </td>
+                                             <td class="col-md-2">
+                                               Average
+                                               </td>
+                                               <td class="col-md-2">
+                                               Days
+                                                 </td>
+                                                 <td class="col-md-2">
+                                                   Status
+                                                   </td>
+                                                    
+                                                     <td class="col-md-2">
+                                                   Type
+                                                       </td>
+                                                       <td class="col-md-2">
+                                                         weight
+                                                         </td>
+                       
+                  </tr>
+              </thead>
+              <tbody id="tablebody">
+              
+                  <tr *ngFor="let crew of appearanceInCrew">
+                        <td class="col-md-2">
+                              {{crew._embedded.show.name}}
+                             </td>
+                        <td class="col-md-2">
+                              {{crew._embedded.show.genres}}
+                             </td>
+                            
+                               
+                                 <td class="col-md-2">
+                                    {{crew._embedded.show.language}}
+                                   </td>
+                                   
+                                    
+                                           <td class="col-md-2">
+                                              {{crew._embedded.show.premiered}}
+                                             </td>
+                                             <td class="col-md-2">
+                                                {{crew._embedded.show.rating.average}}
+                                               </td>
+                                               <td class="col-md-2">
+                                                  {{crew._embedded.show.schedule.days}}
+                                                 </td>
+                                                 <td class="col-md-2">
+                                                    {{crew._embedded.show.status}}
+                                                   </td>
+                                                  
+                                                     <td class="col-md-2">
+                                                        {{crew._embedded.show.type}}
+                                                       </td>
+                                                       <td class="col-md-2">
+                                                          {{crew._embedded.show.weight}}
+                                                         </td>
+                     
+                        
+                  </tr>
+            
+                  <tr><td *ngIf="!appearanceInCrew ||  appearanceInCrew.length==0" colspan="9">
+                        No record Found
+        
+                      </td></tr>
+          </tbody>
+      
+      </table>
+       
+ 
+</div>
+ 
+</div>
+</div>
+  

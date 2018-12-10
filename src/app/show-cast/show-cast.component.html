@@ -1,0 +1,54 @@
+<div style="margin-left:200px">
+<h1>Here is Cast detail</h1>
+</div>
+<div  style="height:400px ;width:900px; margin-left: 200px; overflow-y: auto">
+<table class="table table-bordered">
+       
+        <thead>
+           
+            <tr class="bg-primary">
+                
+                <td class="col-md-3">
+                    Name
+                </td>
+                
+                <td class="col-md-3">
+                    Birthday
+                </td>
+                <td class="col-md-3">
+                         Country Name
+                    </td>
+                    
+                    <td class="col-md-3">
+                        Images
+                    </td>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+            <tr *ngFor="let cas of cast">
+                <td class="col-md-3">
+                        <a  routerLink ="/personDetail/{{cas.person.id}}">  {{cas.person.name}} </a>
+                </td>
+                <td class="col-md-3">
+                        {{cas.person.birthday}}
+                </td>
+                <td class="col-md-3">
+                        {{cas.person.country.name}}
+                </td>
+                <td class="col-md-3">
+                     
+                       <img [src]="cas.person.image.medium" alt="moviesImage"  style="width:100px;height:100px" >
+                </td>
+            </tr>
+        
+            <tr><td *ngIf="!cast || cast.length==0" colspan="2">
+                    No record Found
+    
+                  </td></tr>
+    </tbody>
+
+</table>
+</div>
+
+ 

@@ -1,0 +1,20 @@
+<mat-toolbar style="height:4em" color="primary" >
+  <span>
+    <img src="http://static.tvmaze.com/images/tvm-header-logo.png" class="angular-logo" alt=""  > 
+    
+  </span>
+  <span style="width:30em" ></span>
+  <span class="fill-remaining-space"></span>
+  
+  <button mat-button routerLink="/poeples" routerLinkActive="active"  *ngIf="isLoggedIn$ | async"  >People</button>
+  <button mat-button routerLink="/shows" routerLinkActive="active"  *ngIf="isLoggedIn$ | async"  >shows</button>
+  
+  <span class="fill-remaining-space" style="width:10em"></span>
+  <!-- <button mat-button *ngIf="!isLoggedIn$ | async" routerLink="login">Login</button> -->
+  <button mat-button   routerLink="/contact" >Contact</button>
+  <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async" >Logout</button>
+</mat-toolbar>
+
+ 
+  
+ 

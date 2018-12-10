@@ -1,0 +1,54 @@
+<div class="container-fluid" >
+    <div style="width:300px;margin-left:480px">
+    <form [formGroup]="searcnForm" (ngSubmit)="submit()">
+     <div>
+           <input type="text" class="form-control" style="margin-left:23px" formControlName="userName">
+       </div>
+       <br>
+       <button  class="btn btn-primary" style="margin-left: 134px" > Search</button>
+ </form>
+</div>
+ 
+<br>
+<div  style="height:400px ;width:900px; margin-left: 200px; overflow-y: auto">
+        <table class="table table-bordered">
+            
+             <thead>
+                
+                 <tr class="bg-primary">
+                     
+                     <td class="col-lg-6">
+                         Title
+                     </td>
+                     
+                     <td class="col-lg-6">
+                         Images
+                     </td>
+                 </tr>
+             </thead>
+             <tbody id="tablebody">
+             
+                 <tr *ngFor="let emp of peopleSearch">
+                     <td class="col-lg-6">
+                        <!-- <a  [routerLink]="['shows/showDetail/Girls/personDetail',emp.person.id]">{{emp.person.name}} </a>  -->
+                        <a routerLink="/personDetail/{{emp.person.id}}">{{emp.person.name}} </a>  
+                    </td>
+                    
+                     <td class="col-lg-6">
+                          
+                            <img [src]="emp.person.image.medium" alt="NoImage"  style="width:100px;height:100px" >
+                     </td>
+                 </tr>
+                 <tr><td *ngIf="!peopleSearch || peopleSearch.length==0" colspan="2">
+                   No record Found
+ 
+                 </td></tr>
+             
+     
+         </tbody>
+     
+     </table>
+     </div>
+  
+ </div>
+ 

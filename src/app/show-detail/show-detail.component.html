@@ -1,0 +1,307 @@
+ 
+        
+         <!-- Page Content -->
+         <div  style="height:240px ">
+         <div class="container">
+         
+         <!-- Portfolio Item Heading -->
+         
+         
+         <!-- Portfolio Item Row -->
+         <div style="height:300px">
+         <div class="row">
+         
+           <div class="col-md-3">
+             <img class="img-fluid" [src]="MovieDetail.image.medium" style="width:280px;height:200px;"  alt="">
+           </div>
+         
+           <div class="col-md-9">
+
+             <div class="row">
+               <div class="col-md-3">
+                  <h4  >{{MovieDetail.name}}
+                      <!-- <small>Secondary Text</small> -->
+                    </h4>
+               </div>
+               <div class="col-md-3">
+             <h6 >Rating</h6>
+             <p>{{MovieDetail.rating.average}}</p>
+              
+             </div>
+             <div class="col-md-6">
+             <h6  >Movie Details</h6>
+              {{MovieDetail.summary}}
+              
+              </div>
+              </div>
+           </div>
+          </div>
+         </div>
+        </div>
+      </div>
+         <!-- /.row -->
+         
+         <!-- Related Projects Row -->
+         <!-- <h3 class="my-4">Related Projects</h3>
+         
+         <div class="row">
+         
+           <div class="col-md-3 col-sm-6 mb-4">
+             <a href="#">
+               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+             </a>
+           </div>
+         
+           <div class="col-md-3 col-sm-6 mb-4">
+             <a href="#">
+               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+             </a>
+           </div>
+         
+           <div class="col-md-3 col-sm-6 mb-4">
+             <a href="#">
+               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+             </a>
+           </div>
+         
+           <div class="col-md-3 col-sm-6 mb-4">
+             <a href="#">
+               <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+             </a>
+           </div>
+         
+         </div>
+          /.row -->
+         
+          
+           <!-- <div>
+             <table>
+               <tbody> 
+               <tr *ngFor="let epi of episodes._embedded.episodes">
+ <td>
+ {{epi.airdate}}
+ </td>
+ <td>
+     {{epi.airstamp}}
+     </td>
+     <td>
+         {{epi.airstime}}
+         </td>
+         <td>
+             {{epi.id}}
+             </td>
+             <td>
+                 {{epi.summary}}
+                 </td>
+                 <td>
+                     <img src="epi.url"> -->
+                     <!-- </td>
+                     <td>
+                         {{epi.name}}
+                     </td>
+                     <td>
+                         {{epi.number}}
+                     </td>
+                     <td>
+                         {{epi.runtime}}
+                     </td>
+                     <td>
+                         {{epi.season}}
+                     </td>
+                     
+                 
+ 
+               </tr>
+               </tbody>
+             </table>
+           </div> -->  
+           <div class="row" >
+
+           <div class="col-md-6">
+             <div style="margin-left:40px">
+           <h5>Here is top 5 Shows Cast</h5>
+          </div>
+<div  style="height:200px ;width:600px; margin-left: 40px; overflow-y: auto;">
+<table class="table table-bordered">
+       
+        <thead>
+           
+            <tr class="bg-primary">
+                
+                <td class="col-md-2">
+                    Show Title
+                </td>
+                
+                <td class="col-md-2">
+                    Images
+                </td>
+                <td class="col-md-2">
+                    Birthday
+                </td>
+                <td class="col-md-2">
+                    Country
+                </td>
+                 
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+            <tr *ngFor="let cas of cast | slice:0:5">
+                <td class="col-md-2">
+                   <a  routerLink ="/personDetail/{{cas.person.id}}">  {{cas.person.name}} </a> 
+                </td>
+               
+                <td class="col-md-6">
+                     
+                       <img [src]="cas.person.image.medium" alt="NoImage"  style="width:100px;height:100px" >
+                </td>
+                <td class="col-md-2">
+                    {{cas.person.birthday}} 
+                 </td>
+                 <td class="col-md-2">
+                    {{cas.person.country.name}}
+                 </td>
+                 
+                  
+            </tr>
+            <tr><td *ngIf="!cast || cast.length==0" colspan="2">
+                No record Found
+
+              </td></tr>
+
+    </tbody>
+
+</table>
+</div>
+<div>
+  <table>
+      <tr><td  >
+          <a style="margin-left: 115px;"  routerLink ="/detailCast/{{MovieDetail.id}}">  more </a> 
+       </td></tr>
+  </table>
+</div>
+</div>
+<div class="col-md-6">
+
+<div class="row" style="float:right">
+
+
+
+
+    <div style="margin-left:40px">
+        <h5>Here is top 5 Shows Crew</h5>
+       </div>
+<div  style="height:200px ;width:600px; margin-left: 40px; overflow-y: auto ">
+<table class="table table-bordered">
+       
+        <thead>
+           
+            <tr class="bg-primary">
+                
+                <td class="col-md-2">
+                    Show Title
+                </td>
+                
+                <td class="col-md-2">
+                    Images
+                </td>
+                <td class="col-md-2">
+                    Birthday
+                </td>
+                <td class="col-md-2">
+                    Country
+                </td>
+                 
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        
+            <tr *ngFor="let cre of crew  | slice:0:5 ">
+                <td class="col-md-2">
+                   <a  routerLink ="/personDetail/{{cre.person.id}}">  {{cre.person.name}} </a> 
+                </td>
+               
+                <td class="col-md-6">
+                     
+                       <img [src]="cre.person.image.medium" alt="NoImage"  style="width:100px;height:100px" >
+                </td>
+                <td class="col-md-2">
+                    {{cre.person.birthday}} 
+                 </td>
+                 <td class="col-md-2">
+                    {{cre.person.country.name}}
+                 </td>
+                 
+                  
+            </tr>
+            <tr><td *ngIf="!crew || crew.length==0" colspan="2">
+                No record Found
+
+              </td></tr>
+        
+
+    </tbody>
+
+</table>
+</div>
+<div>
+    <table>
+        <tr><td  >
+            <a style="margin-left: 115px;"  routerLink ="/detailCrew/{{MovieDetail.id}}">  more </a> 
+         </td></tr>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+           
+           <!-- <div>
+               Crew
+                 <table>
+                     <tbody> 
+                     <tr *ngFor="let cre of crew">
+       <td>
+       {{cre.person.url}}
+       </td>
+       <td>
+          <a [routerLink]="['personDetail',cre.person.id]">  {{cre.person.name}} </a> 
+           </td>
+           <td>
+               {{cre.person.birthday}}
+               </td>
+               <td>
+                   {{cre.person.country.name}}
+                   </td>
+                   <td>
+                       {{cre.person.country.name}}
+                       </td>
+                       <td>
+                           {{cre.person.type}}
+                           </td>
+                            
+                              
+                           
+                       
+       
+                     </tr>
+                     <tr>
+                       <td>
+                          <a [routerLink]="['detailCrew',MovieDetail.id]">  more </a> 
+                       </td>
+                     </tr>
+                     </tbody>
+                   </table>
+             </div> -->
+            <!-- /.container -->
+          <!-- <p>this is paragraph</p> -->
+         <!-- Footer -->
+         <!-- <footer class="py-5 bg-dark">
+         <div class="container">
+           <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+         </div>
+          /.container -->
+         <!-- </footer> -->  
+         
+         <!-- Bootstrap core JavaScript -->
+         <!-- <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+         <script src="/src/app/js/bootstrap.bundle.min.js"></script> -->
